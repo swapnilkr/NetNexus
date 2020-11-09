@@ -4,7 +4,9 @@ const app=express();
 
 const port=8000;
 
-
+//use express router
+//for any url check to routes
+app.use('/',require('./routes'));
 
 app.listen (port,function(err)
 {
