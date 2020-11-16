@@ -8,6 +8,14 @@ const port=8000;
 //for any url check to routes
 app.use('/',require('./routes'));
 
+// to set up view engine
+app.set('view engine','ejs');
+
+// to join path
+app.set('views','./views');
+
+
+
 app.listen (port,function(err)
 {
     if (err)
