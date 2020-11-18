@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" href="/css/layout.css">
+
+        <!--to bring all link tags from body of layout.ejs to head part-->
+        <%- style %>
+    </head>
+    <body>
+
+        <!-- calling the header and footer from partials _header.ejs and _footer.ejs -->
+        
+        <%- include('_header'); %>
+
+        <%- body %> <!-- variable body part-->
+
+        <%- include('_footer'); %>
+        <%- script %>
+    </body>
+</html>
