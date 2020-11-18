@@ -5,7 +5,10 @@ const app=express();
 const port=8000;
 
 //adding express ejs layout
-const expressLayouts=require('express-ejs-layouts'); 
+const expressLayouts=require('express-ejs-layouts');
+
+//calling db
+const db = require('./config/mongoose');
 
 //to tell our code that wehenever it encounter link tag , then put it in header
 // as now the link for calling css or scripts   is in user_profile.ejs when it is called in layout.ejs
@@ -14,7 +17,7 @@ const expressLayouts=require('express-ejs-layouts');
 
 //extract style and scripts from sub pages into the layout
 app.set('layout extractStyles',true);
-app.set('layout extractSCripts',true);
+app.set('layout extractScripts',true);
 
 
 //adding static file
