@@ -1,5 +1,8 @@
 const express=require('express');
 
+//get cookie parser
+const cookieParser=require('cookie-parser');
+
 const app=express();
 
 const port=8000;
@@ -9,6 +12,13 @@ const expressLayouts=require('express-ejs-layouts');
 
 //calling db
 const db = require('./config/mongoose');
+
+app.use(express.urlencoded());
+
+app.use(cookieParser());
+
+//adding static file
+app.use(express.static('./assets'));
 
 //to tell our code that wehenever it encounter link tag , then put it in header
 // as now the link for calling css or scripts   is in user_profile.ejs when it is called in layout.ejs
@@ -20,8 +30,7 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 
-//adding static file
-app.use(express.static('./assets'));
+
 
 app.use(expressLayouts); 
 
