@@ -26,3 +26,14 @@
 
 
 <h1> Codeial / Profile Page </h1>
+<p>
+    Name: <%= user.name %>
+</p>
+<p>
+    Email: <%= user.email %>
+</p>
+
+<!-- sign out -->
+<form action="/users/dismiss-session" method="POST">
+    <input type="submit" value="Sign Out">
+</form>

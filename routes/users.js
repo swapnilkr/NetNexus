@@ -11,6 +11,11 @@ router.get('/sign-up',usersController.signUp);
 
 router.get('/sign-in',usersController.signIn);
 
+// vvi imp
 router.post('/create',usersController.create);
+
+router.post('/create-session',usersController.createSession);
+
+router.post('/dismiss-session',usersController.dismissSession);
 
 module.exports=router;
