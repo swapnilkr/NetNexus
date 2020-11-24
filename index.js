@@ -13,6 +13,17 @@ const expressLayouts=require('express-ejs-layouts');
 //calling db
 const db = require('./config/mongoose');
 
+// used for session cookie
+// express -session for using session encrypted cookie
+const session = require('express-session');
+
+// passport js
+const passport = require('passport');
+
+// startegy
+const passportLocal=require('./config/passport-local-strategy');
+
+
 app.use(express.urlencoded());
 
 app.use(cookieParser());
@@ -30,8 +41,6 @@ app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
 
-
-
 app.use(expressLayouts); 
 
 //use express router
@@ -44,7 +53,27 @@ app.set('view engine','ejs');
 // to join path
 app.set('views','./views');
 
+// a MW which takes session cookie and encrypts it
 
+app.use(session({
+    // name of cookie
+    name : 'codeial' , 
+    // TODO change the secret before deployment in production mode
+    // encrypted key
+    secret : 'blahsomething',
+
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        // in ms
+        maxAge:(1000 * 60 * 100)
+    }
+
+}));
+
+app,use(passport.initialize());
+
+app.use(passport.session());
 
 app.listen (port,function(err)
 {
