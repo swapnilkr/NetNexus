@@ -23,6 +23,8 @@ const passport = require('passport');
 // startegy
 const passportLocal=require('./config/passport-local-strategy');
 
+// require mongo store
+const MongoStore = require('connect-mongo')(session);
 
 app.use(express.urlencoded());
 
@@ -50,8 +52,9 @@ app.set('view engine','ejs');
 // to join path
 app.set('views','./views');
 
-// a MW which takes session cookie and encrypts it
+// mongo store is used to store the session cookie in the db
 
+// a MW which takes session cookie and encrypts it
 app.use(session({
     // name of cookie
     name : 'codeial' , 
@@ -64,8 +67,18 @@ app.use(session({
     cookie:{
         // in ms
         maxAge:(1000 * 60 * 100)
+    },
+    store : new MongoStore({
+        
+            mongooseConnection : db ,
+            autoRemove : 'disabled'
+        
+    },
+    function(err)
+    {
+        console.log(err || 'connect-mongodb setup ok');
     }
-
+    )
 }));
 
 app.use(passport.initialize());
