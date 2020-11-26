@@ -43,9 +43,6 @@ app.set('layout extractScripts',true);
 
 app.use(expressLayouts); 
 
-//use express router
-//for any url check to routes
-app.use('/',require('./routes'));
 
 // to set up view engine
 app.set('view engine','ejs');
@@ -71,9 +68,18 @@ app.use(session({
 
 }));
 
-app,use(passport.initialize());
+app.use(passport.initialize());
 
 app.use(passport.session());
+
+// whether a session cookie is present or not
+// user will be stored in locals
+app.use(passport.setAuthenticatedUser);
+
+//use express router
+//for any url check to routes
+app.use('/',require('./routes'));
+
 
 app.listen (port,function(err)
 {
