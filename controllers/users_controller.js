@@ -78,3 +78,10 @@ module.exports.createSession=function(req,res){
     return res.redirect('/');
 }
 
+// to destroy session after sign out
+module.exports.destroySession=function(req,res)
+{
+    // passport inbuilt lib for sign out
+    req.logout();
+    return res.redirect('/');
+}
