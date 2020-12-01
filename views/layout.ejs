@@ -4,7 +4,8 @@
             <%= title %>
         </title>
         <link rel="stylesheet" href="/css/layout.css">
-
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
         <!--to bring all link tags from body of layout.ejs to head part-->
         <%- style %>
     </head>
@@ -14,9 +15,14 @@
         
         <%- include('_header'); %>
 
-        <%- body %> <!-- variable body part-->
+        <main id="layout-main">
 
+            <%- body %> <!-- variable body part-->
+           
+
+        </main>
         <%- include('_footer'); %>
+        
         <%- script %>
     </body>
 </html>
