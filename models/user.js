@@ -12,7 +12,7 @@ const userSchema=new mongoose.Schema({
         required:true
     },
 
-    name:{
+    name: {
         type:String,
         required:true
     }
