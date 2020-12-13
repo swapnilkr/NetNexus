@@ -21,15 +21,30 @@ module.exports.home = function(req,res)
     // so now we use populate concept of mongoose
 
     // populate the user
-    Post.find({}).populate('user').exec(function(err,posts)
-    {
-        return res.render('home',{
-            title:"Codeial! home",
-            posts : posts 
+    // Post.find({}).populate('user').exec(function(err,posts)
+    // {
+    //     return res.render('home',{
+    //         title:"Codeial! home",
+    //         posts : posts 
+    // })
+
+    //populate the user and comment and author of comment
+    //multiple populate then we use path
+    Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
     })
+    .exec(function(err, posts){
+        return res.render('home', {
+            title: "Codeial | Home",
+            posts:  posts
+        });
+    })
+     // return res.end(`<h1>Express is up for Codeial</h1>`);
 
 
- // return res.end(`<h1>Express is up for Codeial</h1>`);
- 
- });
 }

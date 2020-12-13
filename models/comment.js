@@ -19,6 +19,6 @@ const commentSchema = new mongoose.Schema({
     timestamps:true
 });
 
-const Comment=mongoose.model('comment',commentSchema);
+const Comment=mongoose.model('Comment',commentSchema);
 
 module.exports=Comment;

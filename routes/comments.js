@@ -1,8 +1,8 @@
 const expresss=require('express');
 
-const passport = require('passport');
-
 const router = expresss.Router();
+
+const passport = require('passport');
 
 const commentsController=require('../controllers/comments_controller');
 

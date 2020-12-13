@@ -24,21 +24,21 @@
     Codeial / <%=title %> 
 </h1>
 
-<section id="feed-post">
+<section id="feed-posts">
     <h4>
         Posts
     </h4>
      <!-- locals is object -->
     <% if (locals.user) { %>
     <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content"  cols="30" rows="5" placeholder="Type Here"></textarea>
+        <textarea name="content"  cols="30" rows="5" placeholder="Type Here" required></textarea>
         <input type="submit" value="Post">
     </form>
     <% } %>
 
     <div id="post-list-conatiner">
         <ul>
-            <% for(post of posts){ %>
+            <% for (post of posts) { %>
             <li>
                 <p>
                     <%= post.content %>
@@ -51,7 +51,7 @@
                     <% if (locals.user) { %>
                         <form action="/comments/create"  method="POST">
                             
-                            <input type="text" name="content" placeholder="Type Here to add comment...">
+                            <input type="text" name="content" placeholder="Type Here to add comment..." required>
                             
                             <!-- hidden input for which post comment is made -->
 
@@ -59,6 +59,22 @@
                             <input type="submit" value="Add Comment">
                         </form>
                     <% } %>
+
+                    <div class="post-comments-list">
+                        <ul id="post-comments-<%= post._id %>">
+                            <% for (comment of post.comments){%>
+                                
+                            <p>
+                                <%= comment.content %>
+                                <br>
+                                <small>
+                                    <%= comment.user.name %>
+                                </small>
+                            </p>    
+                            <%} %>
+                        </ul>
+                    </div>   
+
                 </div>
             </li>
             
