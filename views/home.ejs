@@ -41,6 +41,14 @@
             <% for (post of posts) { %>
             <li>
                 <p>
+                    <!--if user is signed only && the person who created only can del -->
+                  <%  if (locals.user && locals.user.id == post.user.id) {%>
+                    <small>
+                        <a href="/posts/destroy/<%= post.id %>">
+                            X
+                        </a>
+                    </small>
+                    <% } %>
                     <%= post.content %>
                     <br>
                     <small>
@@ -65,6 +73,14 @@
                             <% for (comment of post.comments){%>
                                 
                             <p>
+                                <!--if user is signed only && the person who created only can del -->
+                                <%  if (locals.user && locals.user.id == comment.user.id) {%>
+                                <small>
+                                    <a href="/comments/destroy/<%= comment.id %>">
+                                        X
+                                    </a>
+                                </small>
+                                <% } %>
                                 <%= comment.content %>
                                 <br>
                                 <small>

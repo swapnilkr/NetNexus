@@ -30,3 +30,30 @@ module.exports.create=function(req,res){
     })
 
 }
+
+module.exports.destroy=function(req,res){
+    Comment.findById(req.params.id,function(err,comment)
+    {
+
+        // authorize , only perosn posted that comment should be able to del
+        //.id means converting the object id into string
+        if(comment.user == req.user.id ){
+
+            // find post which have this comment
+            let postId=comment.post;
+
+            //remove the comment
+            comment.remove();
+
+            // update the post after del
+
+            //$pull is syntax when we interact with mongo db terminal
+            Post.findByIdAndUpdate(postId,{ $pull:{ comments:req.params.id}},function(err,post){
+                return res.redirect('back');
+            })
+
+        }else{
+            return res.redirect('back');
+        }
+    })
+}
