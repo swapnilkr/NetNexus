@@ -1,0 +1,17 @@
+<li>
+    <p>
+        <!--if user is signed only && the person who created only can del and the one who created the post -->
+        <%  if (locals.user && (locals.user.id == comment.user.id || locals.user.id == post.user.id ) ) {%>
+        <small>
+            <a href="/comments/destroy/<%= comment.id %>">
+                X
+            </a>
+        </small>
+        <% } %>
+        <%= comment.content %>
+        <br>
+        <small>
+            <%= comment.user.name %>
+        </small>
+    </p>    
+</li>

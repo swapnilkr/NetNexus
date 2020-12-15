@@ -35,25 +35,37 @@ module.exports.destroy=function(req,res){
     Comment.findById(req.params.id,function(err,comment)
     {
 
-        // authorize , only perosn posted that comment should be able to del
-        //.id means converting the object id into string
-        if(comment.user == req.user.id ){
+        // console.log(req.user.id);
+        // console.log(comment.user);
+        // console.log(comment.post.user);
+        // console.log(comment.post);
 
-            // find post which have this comment
-            let postId=comment.post;
 
-            //remove the comment
-            comment.remove();
+        // find post which have this comment
+        let postId=comment.post;
+        Post.findById(postId,function(err,post){
 
-            // update the post after del
+        
 
-            //$pull is syntax when we interact with mongo db terminal
-            Post.findByIdAndUpdate(postId,{ $pull:{ comments:req.params.id}},function(err,post){
+            // authorize , only perosn posted that comment should be able to del and the person who posted that post
+            //.id means converting the object id into string
+
+            if(comment.user == req.user.id || req.user.id == post.user){
+
+            
+                //remove the comment
+                comment.remove();
+
+                // update the post after del
+
+                //$pull is syntax when we interact with mongo db terminal
+                Post.findByIdAndUpdate(postId,{ $pull:{ comments:req.params.id}},function(err,post){
+                    return res.redirect('back');
+                })
+
+            }else{
                 return res.redirect('back');
-            })
-
-        }else{
-            return res.redirect('back');
-        }
+            }
+        });
     })
 }
