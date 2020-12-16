@@ -1,6 +1,11 @@
 // require user
 const User=require('../models/user');
 
+
+// no need of async wait 
+// no nesting level
+// already neat
+
 module.exports.profile = function(req,res)
 {
     User.findById(req.params.id,function(err,user){
