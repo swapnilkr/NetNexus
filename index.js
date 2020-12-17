@@ -29,6 +29,12 @@ const MongoStore = require('connect-mongo')(session);
 //require sass Mw
 const sassMiddleware = require('node-sass-middleware');
 
+// for flash message
+const flash = require('connect-flash');
+
+// MW for converting
+const custoMware =  require('./config/middleware');
+
 
 // MW to convert sass into css beofore server restarts
 app.use(sassMiddleware({
@@ -101,6 +107,12 @@ app.use(passport.session());
 // whether a session cookie is present or not
 // user will be stored in locals
 app.use(passport.setAuthenticatedUser);
+
+// just where session is used we set up flash-message
+//as flash message stores in session cookie
+app.use(flash());
+
+app.use(custoMware.setflash);
 
 //use express router
 //for any url check to routes
