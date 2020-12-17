@@ -10,11 +10,12 @@ const User = require('../models/user');
 //authentication using passport
 passport.use(new LocalStrategy({
 
-        usernameField:'email' //as email is unique , this to identify user
-
+        usernameField:'email', //as email is unique , this to identify user
+        // for flash message
+        passReqToCallback : true // alows us to set first argument as req
     },
     // when localStrategy is called email password and done will be passed on
-    function(email,password,done)
+    function(req,email,password,done)
     {
         //find user and estb the identity
         //first email is schema email or the property we r finding
@@ -23,7 +24,9 @@ passport.use(new LocalStrategy({
         {
             if (err)
             {
-                console.log('Error in finding user --> Passport');
+                // console.log('Error in finding user --> Passport');
+
+                req.flash('error',err);
 
                 // passport has separate syntax
 
@@ -33,7 +36,8 @@ passport.use(new LocalStrategy({
             // user not found
             if (!user || user.password != password)
             {
-                console.log('Invalid Username / Password');
+                req.flash('error','Invalid Username / Password' );
+                // console.log('Invalid Username / Password');
                 // err= null and authentication is noot done so false
                 return done(null , false);
             }

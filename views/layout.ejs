@@ -3,9 +3,15 @@
         <title>
             <%= title %>
         </title>
+        <!-- link tag for cdn of noty.js-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" integrity="sha512-0p3K0H3S6Q4bEWZ/WmC94Tgit2ular2/n0ESdfEX8l172YyQj8re1Wu9s/HT9T/T2osUw5Gx/6pAZNk3UKbESw==" crossorigin="anonymous" />
+        <!-- now js file-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <link rel="stylesheet" href="/css/layout.css">
         <link rel="stylesheet" href="/css/header.css">
         <link rel="stylesheet" href="/css/footer.css">
+
+
         <!--to bring all link tags from body of layout.ejs to head part-->
         <%- style %>
     </head>
@@ -15,11 +21,12 @@
         
         <%- include('_header'); %>
 
-        <% if(flash.success && flash.success.length > 0) { %>
+        <!-- we use noty.js flash mesage -->
+        <!-- <% if(flash.success && flash.success.length > 0) { %>
             <h5>
                 <%= flash.success %>
             </h5>
-        <% } %>
+        <% } %> -->
 
         <main id="layout-main">
 
@@ -30,5 +37,37 @@
         <%- include('_footer'); %>
         
         <%- script %>
+
+        <!-- for noty flah mesage-->
+        <!-- slect theme and option by reading documentation on noty.js website-->
+        <script>
+            <% if(flash.success && flash.success.length > 0) { %>
+                 new Noty ({
+
+                    theme : 'sunset',
+                    text: '<%= flash.success %>',
+                    layout: 'topRight',
+                    timeout:1500
+                }).show();
+
+
+            <% } %>
+
+            // if error
+            <% if(flash.error && flash.error.length > 0) { %>
+                 new Noty ({
+
+                    theme : 'relax',
+                    text: '<%= flash.error %>',
+                    layout: 'topRight',
+                    timeout:1500
+                }).show();
+
+
+            <% } %>
+         </script>
+
+
+
     </body>
 </html>

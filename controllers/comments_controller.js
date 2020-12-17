@@ -96,12 +96,16 @@ module.exports.create = async function (req, res) {
             //after updating we need to save it
             post.comments.push(comment);
             post.save();
+            req.flash('success' , 'Comments Added  !');
 
             res.redirect('/');
         }
     } catch (err) {
-        console.log('Error', err);
-        return;
+        // flash message
+        req.flash('error' , err);
+
+        // console.log('Error', err);
+        return res.redirect('back');
     }
 
 }
@@ -126,20 +130,25 @@ module.exports.destroy=async function(req,res){
                 //remove the comment
                 comment.remove();
 
+                req.flash('success' , 'Comments Deleted  !');
                 // update the post after del
-
+                
                 //$pull is syntax when we interact with mongo db terminal
                 Post.findByIdAndUpdate(postId,{ $pull:{ comments:req.params.id}},function(err,post){
                     return res.redirect('back');
                 })
 
             }else{
+                req.flash('error' , 'You cannot delete this comment !');
                 return res.redirect('back');
             }
 
     } catch (err) {
-        console.log('Error', err);
-        return;
+        // flash message
+        req.flash('error' , err);
+
+        // console.log('Error', err);
+        return res.redirect('back');
     }
     
 
