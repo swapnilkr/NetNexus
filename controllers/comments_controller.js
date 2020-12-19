@@ -131,7 +131,7 @@ module.exports.destroy=async function(req,res){
                 comment.remove();
 
                 req.flash('success' , 'Comments Deleted  !');
-                // update the post after del
+                // update the post after delete of comment from databse
                 
                 //$pull is syntax when we interact with mongo db terminal
                 Post.findByIdAndUpdate(postId,{ $pull:{ comments:req.params.id}},function(err,post){

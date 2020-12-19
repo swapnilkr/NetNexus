@@ -49,7 +49,7 @@ const Comment=require('../models/comment');
 module.exports.create=async function(req,res)
 {
     try {
-        await Post.create({
+        let post = await Post.create({
             content: req.body.content,
             // this user id is used later to find which person posted the resp post
             user: req.user._id
@@ -57,6 +57,15 @@ module.exports.create=async function(req,res)
 
         });
 
+        if (req.xhr){
+            return res.status(200).json({
+                data: {
+                    post: post
+                },
+                message: "Post created!"
+            });
+        }
+        
         req.flash('success' , 'Post published !');
 
         return res.redirect('back');
