@@ -75,6 +75,8 @@ module.exports.home = async function(req,res)
 
         // populate tge user of each post
         let posts = await Post.find({})
+        //sort to show the item published latest first
+            .sort('-createdAt')
             .populate('user')
             .populate({
                 path: 'comments',
