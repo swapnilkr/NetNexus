@@ -47,7 +47,7 @@
         <!-- slect theme and option by reading documentation on noty.js website-->
         <script>
             <% if(flash.success && flash.success.length > 0) { %>
-                 new Noty ({
+                new Noty ({
 
                     theme : 'sunset',
                     text: '<%= flash.success %>',
@@ -60,7 +60,7 @@
 
             // if error
             <% if(flash.error && flash.error.length > 0) { %>
-                 new Noty ({
+                new Noty ({
 
                     theme : 'relax',
                     text: '<%= flash.error %>',
