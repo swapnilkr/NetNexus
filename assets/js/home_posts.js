@@ -72,6 +72,7 @@
 
     // method to delete a post from DOM
     let deletePost = function(deleteLink){
+        // click function used
         $(deleteLink).click(function(e){
             e.preventDefault();
 
