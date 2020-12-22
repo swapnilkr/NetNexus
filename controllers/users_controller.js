@@ -1,6 +1,7 @@
 // require user
-const User=require('../models/user');
-
+const User = require('../models/user');
+const fs = require('fs');
+const path = require('path');
 
 // no need of async wait 
 // no nesting level
@@ -45,6 +46,16 @@ module.exports.update=async function(req,res){
                 user.email = req.body.email;
 
                 if(req.file){
+                    // if user already have avatar then we update and remove the previous one from folder
+                    // but if user updates first time then it will throw error so 
+                    // fs.existsSync checkks if file present on the pth or not if not then in wont move inside
+                    if(user.avatar && fs.existsSync(path.join(__dirname,'..',user.avatar))){
+                        fs.unlinkSync(path.join(__dirname,'..',user.avatar));
+                    }
+                    
+
+
+
                     // this is saving the path of uploaded file into the avatar field in the user
                     user.avatar = User.avatarPath + '/' +req.file.filename
                 }

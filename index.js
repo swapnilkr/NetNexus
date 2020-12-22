@@ -52,6 +52,10 @@ app.use(cookieParser());
 //adding static file
 app.use(express.static('./assets'));
 
+// for avatar
+// make the uploads path available to the browser
+app.use('/uploads',express.static(__dirname+'/uploads'));
+
 //to tell our code that wehenever it encounter link tag , then put it in header
 // as now the link for calling css or scripts   is in user_profile.ejs when it is called in layout.ejs
 // it is called in body part of layout.ejs which is bad approach . to over come we use this approach 
