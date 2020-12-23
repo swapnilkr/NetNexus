@@ -1,14 +1,14 @@
-const express=require('express');
+const express = require('express');
 
 //get cookie parser
-const cookieParser=require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
-const app=express();
+const app = express();
 
-const port=8000;
+const port = 8000;
 
 //adding express ejs layout
-const expressLayouts=require('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts');
 
 //calling db
 const db = require('./config/mongoose');
@@ -20,8 +20,10 @@ const session = require('express-session');
 // passport js
 const passport = require('passport');
 
-// startegy
-const passportLocal=require('./config/passport-local-strategy');
+// startegy for passport
+const passportLocal = require('./config/passport-local-strategy');
+const passportJwt = require('./config/passport-jwt-strategy');
+
 
 // require mongo store
 const MongoStore = require('connect-mongo')(session);
