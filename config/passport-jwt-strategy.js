@@ -9,7 +9,7 @@ const User = require('../models/user');
 // right now let it be codeial
 
 let opts = {
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     // key token to encrypt or decrypt
     secretOrKey : 'codeial'
 }
