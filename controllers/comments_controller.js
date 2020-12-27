@@ -102,7 +102,7 @@ module.exports.create = async function (req, res) {
             comment = await comment.populate('user', 'name email').execPopulate();
 
             // to send mail whenever comment is made
-            commentsMailer.newcomment(comment);
+            commentsMailer.newComment(comment);
             if (req.xhr){
                 
                 
