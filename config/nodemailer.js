@@ -12,7 +12,7 @@ let transporter = nodeMailer.createTransport({
     // for stop spam of message
     auth: {
         user: 'conneqtioncodeial',
-        pass: '123456789asdfghjkl'
+        pass: '12345asdfghjkl6789'
     }
 
 });
