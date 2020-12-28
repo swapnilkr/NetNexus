@@ -37,6 +37,10 @@ const flash = require('connect-flash');
 // MW for converting
 const custoMware =  require('./config/middleware');
 
+// for kui gui
+var kue = require('kue');
+kue.createQueue();
+kue.app.listen(3000);
 
 // MW to convert sass into css beofore server restarts
 app.use(sassMiddleware({

@@ -10,6 +10,10 @@ const Post=require('../models/post');
 
 const commentsMailer = require('../mailers/comments_mailer');
 
+const queue = require('../config/kue');
+const commentEmailWorker = require('../workers/comment_email_worker');
+
+
 // without asyn await
 // module.exports.create=function(req,res){
 //     Post.findById(req.body.post,function(err,post){
@@ -102,7 +106,19 @@ module.exports.create = async function (req, res) {
             comment = await comment.populate('user', 'name email').execPopulate();
 
             // to send mail whenever comment is made
-            commentsMailer.newComment(comment);
+            // since we using KUE , it will be taken care by KUE
+            // commentsMailer.newComment(comment);
+
+            let job = queue.create('emails',comment).save(function(err){
+                if(err){
+                    console.log('error in creating a queue');
+                }
+
+                console.log('job enqueued', job.id);
+            });
+
+
+
             if (req.xhr){
                 
                 
