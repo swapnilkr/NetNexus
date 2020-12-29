@@ -47,7 +47,7 @@ module.exports.toggleLike = async function(req,res){
 
             // else make a new like
 
-            let newLike = await likeable.create({
+            let newLike = await Like.create({
 
                 user: req.user._id,
                 likeable: req.query.id,
@@ -55,7 +55,7 @@ module.exports.toggleLike = async function(req,res){
             });
 
             // push like in array
-            likeable.likes.push(like._id);
+            likeable.likes.push(newLike._id);
             likeable.save();
 
         }
