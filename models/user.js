@@ -23,7 +23,15 @@ const userSchema=new mongoose.Schema({
 
     avatar: {
         type: String
-    }
+    },
+
+    friendships: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship'
+        }
+    ]
+
 },{
     timestamps:true // let us know when the user data was created and when it was last updated
 });

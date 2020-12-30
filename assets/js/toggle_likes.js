@@ -11,7 +11,7 @@ class ToggleLike{
             e.preventDefault();
             let self = this;
 
-            // this is a new way of writing ajax which you might've studied, it looks like the same as promises
+            // this is a new way of writing ajax , it looks like the same as promises
             $.ajax({
                 type: 'POST',
                 url: $(self).attr('href'),
