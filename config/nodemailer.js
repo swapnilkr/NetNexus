@@ -1,21 +1,9 @@
 const nodeMailer = require('nodemailer');
 const ejs =  require('ejs');
 const path =  require('path');
+const env = require('./environment');
 
-let transporter = nodeMailer.createTransport({
-
-    service: 'gmail',
-    host: 'smtp.gmail.com' , 
-    port: 587 ,
-    secure: false,
-
-    // for stop spam of message
-    auth: {
-        user: 'conneqtioncodeial',
-        pass: '12345asdfghjkl6789'
-    }
-
-});
+let transporter = nodeMailer.createTransport(env.smtp);
 
 
 // let know we will use ejs for beautiful crafted email

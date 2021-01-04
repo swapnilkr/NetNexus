@@ -5,13 +5,15 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 const User = require('../models/user');
 
+const env = require('./environment');
+
 // TODO later for some difficult hash code for key , to encrypt or decrypt JWT token
 // right now let it be codeial
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     // key token to encrypt or decrypt
-    secretOrKey : 'codeial'
+    secretOrKey : env.jwt_secret
 }
 
 

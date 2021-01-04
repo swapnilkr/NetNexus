@@ -1,4 +1,8 @@
 const express = require('express');
+// accessing env file
+const env = require('./config/environment');
+
+const path = require('path');
 
 //get cookie parser
 const cookieParser = require('cookie-parser');
@@ -37,6 +41,8 @@ const flash = require('connect-flash');
 // MW for converting
 const custoMware =  require('./config/middleware');
 
+
+
 // import socket io and diff http as web socket not run in http
 // setup the chat server to be used with socket.io
 const chatServer = require('http').Server(app);
@@ -52,8 +58,8 @@ kue.app.listen(3000);
 
 // MW to convert sass into css beofore server restarts
 app.use(sassMiddleware({
-    src: './assets/scss',
-    dest:'./assets/css',
+    src: path.join(__dirname, env.asset_path, '/scss'),
+    dest:path.join(__dirname, env.asset_path, '/css'),
     debug:true,
     outputStyle : 'extended',
     prefix: '/css'
@@ -64,7 +70,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 //adding static file
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 
 // for avatar
 // make the uploads path available to the browser
@@ -97,7 +103,7 @@ app.use(session({
     name : 'codeial' , 
     // TODO change the secret before deployment in production mode
     // encrypted key
-    secret : 'blahsomething',
+    secret : env.session_cookie_key,
 
     saveUninitialized:false,
     resave:false,
