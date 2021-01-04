@@ -2,6 +2,12 @@ const express = require('express');
 // accessing env file
 const env = require('./config/environment');
 
+
+// adding morgan for log
+const logger = require('morgan');
+
+const rfs = require('rotating-file-stream')
+
 const path = require('path');
 
 //get cookie parser
@@ -56,14 +62,16 @@ var kue = require('kue');
 kue.createQueue();
 kue.app.listen(3000);
 
-// MW to convert sass into css beofore server restarts
-app.use(sassMiddleware({
-    src: path.join(__dirname, env.asset_path, '/scss'),
-    dest:path.join(__dirname, env.asset_path, '/css'),
-    debug:true,
-    outputStyle : 'extended',
-    prefix: '/css'
-}));
+if (env.name == 'development'){
+    // MW to convert sass into css beofore server restarts
+    app.use(sassMiddleware({
+        src: path.join(__dirname, env.asset_path, '/scss'),
+        dest:path.join(__dirname, env.asset_path, '/css'),
+        debug:true,
+        outputStyle : 'extended',
+        prefix: '/css'
+    }));
+}
 
 app.use(express.urlencoded());
 
@@ -75,6 +83,10 @@ app.use(express.static(env.asset_path));
 // for avatar
 // make the uploads path available to the browser
 app.use('/uploads',express.static(__dirname+'/uploads'));
+
+// using logger
+app.use(logger(env.morgan.mode, env.morgan.options));
+
 
 //to tell our code that wehenever it encounter link tag , then put it in header
 // as now the link for calling css or scripts   is in user_profile.ejs when it is called in layout.ejs
