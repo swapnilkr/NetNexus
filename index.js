@@ -1,7 +1,7 @@
 const express = require('express');
+
 // accessing env file
 const env = require('./config/environment');
-
 
 // adding morgan for log
 const logger = require('morgan');
