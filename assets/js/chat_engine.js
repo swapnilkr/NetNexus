@@ -4,7 +4,7 @@ class ChatEngine{
         this.userEmail = userEmail;
 
         // io is given globally by cdn of socket.io
-        this.socket = io.connect('http://localhost:5000');
+        this.socket = io.connect('http://13.234.110.75:5000');
 
         if (this.userEmail){
             this.connectionHandler();
