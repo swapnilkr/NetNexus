@@ -1,7 +1,7 @@
 <footer id="layout-footer">
     <div>
         <p>
-            &#169; R & A . All Rights Reserved
+            <p>© Swapnil. All Rights Reserved</p>
         </p>
     </div>
     
@@ -12,7 +12,11 @@
                     <a href="/">Home</a>
                 </li>
                 <li>
-                    <a href="/users/profile">Profile</a>
+                    <%if(locals.user) { %>
+                        <a href="/users/profile/<%= user.id %>">Profile</a>
+                    <% } else { %>
+                        <a href="/users/sign-in">Sign In</a>
+                    <% } %>
                 </li>
             </ul>
         </nav>

@@ -4,7 +4,9 @@ class ChatEngine{
         this.userEmail = userEmail;
 
         // io is given globally by cdn of socket.io
-        this.socket = io.connect('http://13.234.110.75:5000');
+        // http://localhost:5000 for localhost
+        // this.socket = io.connect('http://13.234.110.75:5000');
+        this.socket = io.connect('http://localhost:5000');
 
         if (this.userEmail){
             this.connectionHandler();
@@ -26,7 +28,7 @@ class ChatEngine{
             });
 
             self.socket.on('user_joined', function(data){
-                console.log('a user joined!', data);
+                // console.log('a user joined!', data);
             })
 
 
@@ -46,7 +48,7 @@ class ChatEngine{
         });
 
         self.socket.on('receive_message', function(data){
-            console.log('message received', data.message);
+            // console.log('message received', data.message);
 
 
             let newMessage = $('<li>');
@@ -60,6 +62,8 @@ class ChatEngine{
             newMessage.append($('<span>', {
                 'html': data.message
             }));
+
+            newMessage.append($('<br>'));
 
             newMessage.append($('<sub>', {
                 'html': data.user_email

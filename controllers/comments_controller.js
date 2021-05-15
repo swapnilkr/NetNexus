@@ -118,6 +118,16 @@ module.exports.create = async function (req, res) {
                 console.log('job enqueued', job.id);
             });
 
+            let job2 = queue.create('post-owner-email', comment).save(function(err)
+            {
+                if(err)
+                {
+                    console.log('Error in sending to the queue', err);
+                    return;
+                }
+                console.log('Job enqueued', job2.id);
+            });
+
 
 
             if (req.xhr){
