@@ -592,3 +592,8 @@
 ::1 - - [16/May/2021:14:17:20 +0000] "GET / HTTP/1.1" 200 23115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
 ::1 - - [16/May/2021:14:22:06 +0000] "POST /comments/create HTTP/1.1" 200 319 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
 ::1 - - [16/May/2021:14:22:07 +0000] "POST /likes/toggle/?id=60a12a8ebccbcf1fc890f89b&type=Comment HTTP/1.1" 200 57 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [16/May/2021:14:32:52 +0000] "GET / HTTP/1.1" 200 24442 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [16/May/2021:14:32:58 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [16/May/2021:14:33:14 +0000] "GET / HTTP/1.1" 200 24113 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [16/May/2021:14:33:17 +0000] "POST /likes/toggle/?id=601c22eb3529582ca86a4523&type=Post HTTP/1.1" 200 57 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
+::1 - - [16/May/2021:14:33:17 +0000] "POST /likes/toggle/?id=601c22eb3529582ca86a4523&type=Post HTTP/1.1" 200 56 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36"
