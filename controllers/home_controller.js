@@ -93,7 +93,7 @@ module.exports.home = async function(req,res)
         let users = await User.find({});
 
         return res.render('home', {
-            title: "Codeial | Home",
+            title: "ConneqtionCodeial | Home",
             posts: posts,
             all_users: users
         });
