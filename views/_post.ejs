@@ -1,5 +1,13 @@
-<li id="post-<%= post._id %>">
-    <p>
+<link rel="stylesheet" href="<%= assetPath('css/post.css') %>">
+<li id="post-<%= post._id %>" class="post-container">
+
+
+
+
+    <section class="full-post">
+
+        <p class="post-user-info"><%= post.user.name %></p>
+        <p class="post-content"><%= post.content %>
         <!--if user is signed only && the person who created only can del -->
       <%  if (locals.user && locals.user.id == post.user.id) {%>
         <small>
@@ -8,32 +16,42 @@
             </a>
         </small>
         <% } %>
-        <%= post.content %>
-        <br>
-        <small>
-            <%= post.user.name %>
-        </small>
+        
+        </p>
+        
 
         <!-- like button -->
 
         <!-- if user is logged in , then show the link to toggle likes , else just show the content-->
         <br>
 
-        <small>
+        <small class="post-like-content">
             <% if (locals.user) { %>
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id%>&type=Post">
+                    <i class="fas fa-thumbs-up"></i>
                     <%= post.likes.length %> Likes
                 </a>
             <% } else { %>
                 <% post.likes.length %>
             <% } %>
         </small>
+        </section>
 
 
 
 
-    </p>
+    
     <div class="post-comments">
+        <div class="post-comments-list">
+            <ul id="post-comments-<%= post._id %>">
+                <% for (comment of post.comments){%>
+                 
+                    <!--include comment partial-->
+                    <%- include('_comment') -%>
+
+                <%} %>
+            </ul>
+        </div> 
         <% if (locals.user) { %>
             <form id="post-<%= post._id %>-comments-form" action="/comments/create"  method="POST">
                 
@@ -46,16 +64,7 @@
             </form>
         <% } %>
 
-        <div class="post-comments-list">
-            <ul id="post-comments-<%= post._id %>">
-                <% for (comment of post.comments){%>
-                 
-                    <!--include comment partial-->
-                    <%- include('_comment') -%>
-
-                <%} %>
-            </ul>
-        </div>   
+          
 
     </div>
 </li>

@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 10px;
   right: 0px;
-  border: 1px dashed grey;
+  border: 1px solid grey;
   height: 350px;
   width: 300px;
   background: white;
@@ -27,6 +27,7 @@
       #user-chat-box #chat-messages-list .self-message span {
         display: inline-block;
         padding: 15px;
+        border:1px solid grey;
         background-color: #a0dcff; }
   #user-chat-box #chat-message-input-container {
     height: 24%;
@@ -35,11 +36,17 @@
     flex-direction: row; }
     #user-chat-box #chat-message-input-container #chat-message-input {
       height: 50%;
-      width: 70%; }
+      width: 70%;
+      outline:none;
+      font-size:17px; }
     #user-chat-box #chat-message-input-container #send-message {
       height: 50%;
       width: 30%;
       font-size: 25px;
       color: white;
       border: none;
-      background: #58d258; }
+      background: lightgreen;
+				cursor:pointer;
+            outline:none;
+            font-family: sans-serif;;
+     }

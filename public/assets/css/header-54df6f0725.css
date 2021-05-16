@@ -5,6 +5,9 @@
   background: #ff0066;
   color: white;
   box-shadow: 1px 1px 1px 1px lightgrey; }
+  #layout-header nav .mini-logo img {
+    height: 30px;
+  width: 30px; }
   #layout-header nav .mini-logo p {
     margin: 5px;
     font-size: 1.4rem;

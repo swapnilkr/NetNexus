@@ -2,7 +2,7 @@
     position: fixed;
     bottom: 10px;
     right: 0px;
-    border: 1px dashed grey;
+    border: 1px solid grey;
     height: 350px;
 	width: 300px;
 	background: white;
@@ -23,6 +23,7 @@
 		    	display: inline-block;
 	    		padding: 15px;
 		    	background-color: #ffa0a0;
+	
 		    }
 		    
 	    }
@@ -35,6 +36,7 @@
 		    	 
 	    		display: inline-block;
 	    		padding: 15px;
+				border:1px solid grey;
     			background-color: #a0dcff;
 		    }
 		   
@@ -50,6 +52,8 @@
 		    #chat-message-input{
 	    	    height: 50%;
     			width: 70%;
+				outline:none;
+            font-size:17px;
 		    }
 
 		    #send-message{
@@ -58,7 +62,10 @@
 			    font-size: 25px;
 			    color: white;
 			    border: none;
-			    background: #58d258;
+			    background: lightgreen;
+            cursor:pointer;
+            outline:none;
+            font-family: sans-serif;
 		    }
 	    }
 }

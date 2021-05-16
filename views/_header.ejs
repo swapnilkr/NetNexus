@@ -1,18 +1,19 @@
 <header id="layout-header">
-    <nav>
-        <div class="mini-logo">
+    <nav>  
+        <div class="mini-logo" id="app-name">    
             <p>
+                <img  src="<%= assetPath('images/logo.jpg') %>">
                 <a href="/">
                     Conneqtion Codeial
                 </a>
             </p>
         </div>
     
-    <div class="auth-links">
+    <div class="auth-links" id="sign-links">
         <ul>
             <% if (locals.user){ %>
                 <li>
-                    <a href="/users/profile">
+                    <a href="/users/profile/<%= user.id %>">
                     <%= user.name %>
                     </a>
                 </li>

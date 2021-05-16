@@ -1,0 +1,29 @@
+.comment-container {
+    background-color: #F2F3F5;
+    list-style: none;
+    margin-bottom: 0.5rem;
+    border-radius: 0.2rem;
+    height: auto;
+    width: 100%; }
+    .comment-container .comment-user-info {
+      font-family: arial;
+      font-size: 0.8rem;
+      color: #a13681;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between; }
+    .comment-container .comment-content {
+      font-family: arial;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem; }
+      .comment-container .comment-content .content {
+        width: 80%; }
+      .comment-container .comment-content .delete-button {
+        width: 20%; }
+    .comment-container .comment-like-content {
+      display: flex;
+      justify-content: space-between; }
+      .comment-container .comment-like-content a {
+        color: #909090;
+        text-decoration: none; }

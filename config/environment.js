@@ -27,7 +27,7 @@ const development = {
         // for stop spam of message
         auth: {
             user: 'conneqtioncodeial',
-            pass: '12345asdfghjkl6789'
+            pass: '987654321asdfghjkl123456789'
         }
     
     },

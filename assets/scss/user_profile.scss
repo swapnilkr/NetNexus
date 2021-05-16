@@ -1,5 +1,56 @@
-body
-{
-    background-color: lightblue;
-    
+body{
+    background-color: whitesmoke;
+    .profile-section{
+        display:flex;
+        flex-direction:column;
+        img{
+            margin:auto;
+        }
+    form{
+        display:inline-block;
+       
+        height: 20rem;
+        width: 18rem;
+        // margin-left: 24rem;
+        border-radius:3%;
+        margin:auto;
+        input{
+            display: inline-block;
+            margin-top: 0.5rem;
+            // border-radius:3%;
+            width: 15rem;
+            padding: 0.8rem;
+            font-size: 0.7rem;
+            // outline: blueviolet;
+            font-family: sans-serif;
+            outline-color:black;
+        
+
+        }
+        input[type="submit"]{
+            
+            // background-color: #d72be3;
+            background-color: #a13681;
+            color:white;
+            font-size:1rem;
+            outline: none;
+            cursor: pointer;
+            border:none;
+            border-radius:3%;
+            
+        }
+        input[type="file"]{
+            
+            // background-color: #d72be3;
+            background-color: #322f38;
+            color:white;
+            font-size:1rem;
+            outline: none;
+            cursor: pointer;
+            border:none;
+            border-radius:3%;
+            
+        }
+    }
+}
 }

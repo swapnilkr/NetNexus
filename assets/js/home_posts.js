@@ -40,43 +40,53 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
-        return $(`<li id="post-${post._id}">
-                    <p>
-                        
-                        <small>
-                            <a class="delete-post-button"  href="/posts/destroy/${ post._id }">X</a>
-                        </small>
-                       
-                        ${ post.content }
-                        <br>
-                        <small>
-                        ${ post.user.name }
-                        </small>
-                        <br>
-                        <small>
-                            
-                                <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
-                                    0 Likes
-                                </a>
-                            
-                        </small>
-                    </p>
-                    <div class="post-comments">
-                        
-                            <form id="post-${ post._id }-comments-form" action="/comments/create" method="POST">
-                                <input type="text" name="content" placeholder="Type Here to add comment..." required>
-                                <input type="hidden" name="post" value="${ post._id }" >
-                                <input type="submit" value="Add Comment">
-                            </form>
-               
+        return $(`<li id="post-${ post._id }" class="post-code">
+        <section class="full-post">
+         
+            <p class="post-user-info">${ post.user.name }</p>
+           
+            <p class="post-content">${ post.content }
                 
-                        <div class="post-comments-list">
-                            <ul id="post-comments-${ post._id }">
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    
+            <!--checking if current logged in user id with the user id who created the post-->
+            <a class="delete-post-button" href="/posts/destroy/${ post._id }">x</a>
+            
+            </p>
+            
+            <small class="like-content">
+                            
+            <a class="toggle-like-button" toggle-like="false" data-likes="0" href="/likes/toggle/?id=${post._id}&type=Post">
+            <i class="fas fa-thumbs-up"></i>  0 likes  
+            
+            </a>
+        
+            </small>
+        </section>    
+        
+            
+        
+            
+        
+            <div class="post-comments">
+                <div class="post-comments-list">
+                    <ul id="post-comments-${ post._id}">
+                        <!-- here 'post' in 'post.comment' is the iterating  varible in the above for loop-->
+                
+                    </ul>
+                </div>
+             
+         
+        
+                <form action="/comments/create" id="post-<%= post._id %>-comments-form" method="POST">
+                    <input type="text" name="content" placeholder="Type here to add a comment..." required>
+                       <!-- sending the id of the post below which comment needs to be added -->
+                        <input type="hidden" name="post" value="${ post._id }">
+                    <input type="submit" value="Add Comment">
+        
+                </form>
+        
+           
+                
+            </div>
                 </li>`)
     }
 
