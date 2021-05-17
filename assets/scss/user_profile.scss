@@ -1,10 +1,33 @@
+html, body {
+    width: 100%;
+    height:100%;
+  }
 body{
-    background-color: whitesmoke;
+    background: linear-gradient(90deg,#75ffed, #6284FF, #e45050);
+  background-size: 400% 400%;
+  animation: gradient 10s ease-in-out infinite; 
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
     .profile-section{
         display:flex;
         flex-direction:column;
         img{
             margin-left:630;
+        }
+        #prof_name{
+            margin-left:630;
+        }
+        #prof_email{
+        margin-left:630;
         }
     form{
         display:inline-block;

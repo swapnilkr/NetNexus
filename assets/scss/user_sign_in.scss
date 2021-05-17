@@ -1,19 +1,106 @@
-body{
-    background-image:url("<%= assetPath('images/cover-photo-blur.jpg') %>");
-    background-size: cover;
+body {
+  background: linear-gradient(90deg,#75ffed, #6284FF, #e45050);
+  background-size: 400% 400%;
+  animation: gradient 10s ease-in-out infinite; 
+  @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+       
+       .circle{
+        position: absolute;
+        border-radius: 50%;
+        background: white;
+        animation: ripple 15s infinite;
+        box-shadow: 0px 0px 1px 0px #508fb9;
+      }
+      
+      .small{
+        width: 200px;
+        height: 200px;
+        left: -100px;
+        bottom: -100px;
+      }
+      
+      .medium{
+        width: 400px;
+        height: 400px;
+        left: -200px;
+        bottom: -200px;
+      }
+      
+      .large{
+        width: 600px;
+        height: 600px;
+        left: -300px;
+        bottom: -300px;
+      }
+      
+      .xlarge{
+        width: 800px;
+        height: 800px;
+        left: -400px;
+        bottom: -400px;
+      }
+      
+      .xxlarge{
+        width: 1000px;
+        height: 1000px;
+        left: -500px;
+        bottom: -500px;
+      }
+      
+      .shade1{
+        opacity: 0.2;
+      }
+      .shade2{
+        opacity: 0.5;
+      }
+      
+      .shade3{
+        opacity: 0.7;
+      }
+      
+      .shade4{
+        opacity: 0.8;
+      }
+      
+      .shade5{
+        opacity: 0.9;
+      }
+      
+      @keyframes ripple{
+        0%{
+          transform: scale(0.8);
+        }
+        
+        50%{
+          transform: scale(1.2);
+        }
+        
+        100%{
+          transform: scale(0.8);
+        }
+    }
+      
 #sign-in-page{
    
     form{
-        background-color:white;
+      background-color: linear-gradient(90deg,#75ffed, #6284FF, #e45050);
+      animation: gradient 10s ease-in-out infinite;;
         height: 20rem;
         width: 18rem;
         // margin-left: 24rem;
         border-radius:3%;
         margin:auto;
-        h1{
-            font-family: arial;
-            font-weight: bold;
-        }
+       
     #google-sign-in{
         height: 2rem;
         width: 15rem;
@@ -24,8 +111,7 @@ body{
         a{
             text-decoration:none;
             color: black;
-            font-size: bold;
-            font-family:sans-serif;
+            
             font-size:0.9rem;
             
             span{
@@ -71,16 +157,10 @@ body{
             margin-left: 1rem;
             a{
                 text-decoration:none;
-                color:#a13681;
+                color:#00f7ea;;
                 
             }
         }
     }
-
-
-
-
-  
-    
 }
 }
