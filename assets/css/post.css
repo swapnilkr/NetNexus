@@ -9,7 +9,7 @@
       border: 0.5px solid lightgray; }
       .post-container .full-post .post-user-info {
         text-decoration: none;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         color: #a13681;
         font-weight: bold;
         display: flex;
@@ -18,7 +18,7 @@
         
         display: flex;
         justify-content: space-between;
-        font-size: 0.8rem; }
+        font-size: 1.2rem; }
       .post-container .full-post .post-like-content {
         display: flex;
         justify-content: space-between; }

@@ -7,9 +7,9 @@
         </p>
         <!--if user is signed only && the person who created only can del and the one who created the post -->
         <p class="comment-content">
-            <div class="content">     
+            <span class="content">     
               <%= comment.content %>
-            </div>
+            </spam>
         <span class="delete-button">
             <% if(locals.user && ((locals.user.id == comment.user.id )||( locals.user.id == post.user.id))){%>
                 <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>">x</a>
