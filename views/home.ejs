@@ -69,12 +69,12 @@
     <section id="user-friends">
         <h4 id="main-heading">Friends</h4>
         <% for (u of all_users){ %>
-            <p>
+            <p id="frnd-list">
                 <a href="/users/profile/<%= u.id %>">
-                    <img src="<%= u.avatar %>" alt="<%= u.name %>" width="30" height="30">
-        <div id="friend-name">
-            <%= u.name %>
-        </div>
+                    <img src="<%= u.avatar %>" alt="<%= u.name %>" width="80" height="70">
+                    <span id="friend-name">
+                    <%= u.name %>
+                </span>
                 </a>
             </p>
         <% } %>

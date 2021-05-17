@@ -1,12 +1,28 @@
 #home-container {
   display: flex; }
   #home-container #user-nav {
+    font-weight: 700;
+    font-family: 'Niconne', cursive;
+    text-shadow: 2px 2px 0px #eb452b;
+    color: black;
+    padding-left: 50;
+    
+    font-size: 1.5rem;
     width: 20%;
     padding: 10px;
     border-right: 1px solid lightgrey; }
+
   #home-container #feed-posts {
+    color: black;
+    font-family: 'Niconne', cursive;
     width: 60%;
     padding: 10px; }
+    #home-container #feed-posts h4{
+    text-shadow: 2px 2px 0px #eb452b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: 'Niconne', cursive;
+    }
     #home-container #feed-posts #new-post-form {
       display: flex;
       flex-direction: column; }
@@ -17,6 +33,8 @@
         font-size: 1rem;
         border: 0.5px dashed black; }
       #home-container #feed-posts #new-post-form input[type="submit"] {
+        font-family: 'Niconne', cursive;
+    text-shadow: 2px 2px 0px #eb452b;
         background-color: #a13681;
         width: 15rem;
         padding: 0.45rem;
@@ -33,16 +51,35 @@
     height: 100%;
   }
   #home-container #user-friends #main-heading {
-    font-family: sans-serif; }
+    font-weight: 700;
+    font-family: 'Niconne', cursive;
+    text-shadow: 2px 2px 0px #eb452b;
+    color: black;
+    padding-left: 50;
+    
+    font-size: 1.5rem;
+     }
+    #home-container #user-friends #frnd-list{
+      display: flex;
+    }
   #home-container #user-friends a {
     text-decoration: none;
     margin-top: 1rem;
     padding: 0.3rem;
     display: flex;
     flex-direction: row; }
-    #home-container #user-friends a img::before {
+    #home-container #user-friends a img {
+      display: flex;
       border-radius: 50%; }
     #home-container #user-friends a #friend-name {
-      color: black; }
+      font-weight: 700;
+    font-family: 'Niconne', cursive;
+      text-shadow: 2px 2px 0px #eb452b;
+    display: flex;
+    color: black;
+    padding-left: 50;
+    padding-top: 20;
+    font-size: 1.5rem;
+       }
   #home-container #user-friends a:hover {
     background-color: #F2F3F5; }

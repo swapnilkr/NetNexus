@@ -2,14 +2,33 @@
     display: flex;
     #user-nav
     {
+        font-weight: 700;
+    font-family: 'Niconne', cursive;
+      text-shadow: 2px 2px 0px #eb452b;
+    
+    color: black;
+    padding-left: 50;
+    
+    font-size: 1.5rem;
         width: 20%;
         padding: 10px;
         border-right: 1px solid lightgrey;
     }
 
     #feed-posts{
+        
+    font-family: 'Niconne', cursive;
+    
+    color: black;
+    
         width: 60%;
         padding: 10px;
+        h4{
+            text-shadow: 2px 2px 0px #eb452b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Niconne', cursive;
+            }
 
         #new-post-form{
             display:flex;
@@ -26,6 +45,9 @@
                 border:0.5px dashed black;
             }
             input[type="submit"]{
+                ome-container #feed-posts #new-post-form input[type="submit"] {
+                    font-family: 'Niconne', cursive;
+                text-shadow: 2px 2px 0px #eb452b;
     
                 background-color: #a13681;
                 // display: inline-block;
@@ -50,9 +72,17 @@
         border-left: 1px solid lightgray;
         height: 100%;
         #main-heading{
-            font-family:sans-serif;
+            font-weight: 700;
+    font-family: 'Niconne', cursive;
+    text-shadow: 2px 2px 0px #eb452b;
+    color: black;
+    padding-left: 50;
+    
+    font-size: 1.5rem;;
             
-
+    #frnd-list{
+        display: flex;
+    }
 
         }
         a{
@@ -61,12 +91,20 @@
             padding:0.3rem;
             display: flex;
             flex-direction: row;
-            img::before{
+            img{
+                display: flex;
                 border-radius:50%;
                 
             }
             #friend-name{
-                color:black;
+                font-weight: 700;
+    font-family: 'Niconne', cursive;
+      text-shadow: 2px 2px 0px #eb452b;
+    display: flex;
+    color: black;
+    padding-left: 50;
+    padding-top: 20;
+    font-size: 1.5rem
                 
             }
         }
@@ -74,5 +112,6 @@
             background-color: #F2F3F5;;
         }
         
+    }
     }
 }
