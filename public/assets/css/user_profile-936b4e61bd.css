@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column; }
     body .profile-section img {
-      margin: auto; }
+      margin-left: 630; }
     body .profile-section form {
       display: inline-block;
       height: 20rem;
