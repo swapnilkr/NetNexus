@@ -5,8 +5,10 @@
 
 
     <section class="full-post">
-
-        <p class="post-user-info"><%= post.user.name %></p>
+        <p class="post-user-info">
+        <a href="/users/profile/<%= post.user.id %>">
+            <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="25" height="25" style="border-radius: 50%;">
+        <%= post.user.name %></p></a>
         <p class="post-content"><%= post.content %>
         <!--if user is signed only && the person who created only can del -->
       <%  if (locals.user && locals.user.id == post.user.id) {%>

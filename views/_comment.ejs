@@ -1,4 +1,6 @@
 <li id="comment-<%= comment._id %>" class="comment-container">
+    <!-- <a href="/users/profile/<%= comment.user.id %>">
+        <img src="<%= comment.user.avatar %>" alt="<%= comment.user.name %>" width="80" height="70"> -->
     <p class="comment-user-info">
         <p class="comment-user-info">
             <%= comment.user.name %> 
@@ -8,12 +10,12 @@
             <div class="content">     
               <%= comment.content %>
             </div>
-        <div class="delete-button">
+        <span class="delete-button">
             <% if(locals.user && ((locals.user.id == comment.user.id )||( locals.user.id == post.user.id))){%>
                 <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>">x</a>
   
            <% } %>
-        </div>
+            </span>
     </p>
         
 

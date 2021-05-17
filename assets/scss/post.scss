@@ -1,4 +1,6 @@
 .post-container{
+    font-family: 'Niconne', cursive;
+    
     border: 0.5px solid lightgray;
     list-style: none;
     margin-bottom: 0.5rem;
@@ -10,7 +12,7 @@
 
     
         .post-user-info{
-            font-family:arial;
+            text-decoration: none;
             font-size:0.8rem;
             color: #a13681;
             font-weight: bold;
@@ -19,7 +21,7 @@
 
         }
         .post-content{
-            font-family:arial;
+            
             // display: inline-block;
             display: flex;
             justify-content: space-between;
