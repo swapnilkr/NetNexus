@@ -39,6 +39,7 @@
     "nodemailer": "^6.4.17",
     "passport": "^0.4.1",
     "passport-google-oauth": "^2.0.0",
+    "passport-google-oauth2": "^0.2.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "rotating-file-stream": "^2.1.3",

@@ -25,7 +25,7 @@ passport.use(new googleStrategy({
                 return;
             }
 
-            console.log(profile);
+            // console.log(profile);
 
             if(user){
                 // if found set this user as req.user
@@ -44,7 +44,7 @@ passport.use(new googleStrategy({
                     email : profile.emails[0].value,
 
                     // creating raandom password using crypto
-                    password : crypto.randomBytes[20].toString('hex'),
+                    password : crypto.randomBytes(20).toString('hex'),
                 }, function(err,user){
 
                     if (err){
