@@ -4,6 +4,12 @@
 It is a social media website which offers features like real time chat engine,a wall to share your posts and comments and a mailing notication on post. <br>
 Hosted at - <a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
+<h2> Demo </h2>
+<img src="https://user-images.githubusercontent.com/49485584/122675460-28688d80-d1f7-11eb-9e92-2238cc5f824d.png">
+<img src="https://user-images.githubusercontent.com/49485584/122675513-6665b180-d1f7-11eb-94cb-1b3134fe2ba5.png">
+<img src="https://user-images.githubusercontent.com/49485584/122675530-7d0c0880-d1f7-11eb-831b-18ab64b9989b.png">
+<img src="https://user-images.githubusercontent.com/49485584/122675543-87c69d80-d1f7-11eb-8773-02408a374edf.png">
+
 <h2> <g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji>Tech used: </h2>
 Node.js  <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="20" height="20"/> </a>  <br>
 Express.js <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="20" height="20"/> </a> <br>
