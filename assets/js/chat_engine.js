@@ -23,7 +23,7 @@ class ChatEngine{
 
             self.socket.emit('join_room', {
                 user_email: self.userEmail,
-                chatroom: 'conneqtioncodeialroom'
+                chatroom: 'netnexusroom'
             });
 
             self.socket.on('user_joined', function(data){
@@ -41,7 +41,7 @@ class ChatEngine{
                 self.socket.emit('send_message', {
                     message: msg,
                     user_email: self.userEmail,
-                    chatroom: 'conneqtioncodeialroom'
+                    chatroom: 'netnexusroom'
                 });
             }
         });

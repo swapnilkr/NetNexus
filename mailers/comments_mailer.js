@@ -8,7 +8,7 @@ exports.newComment = (comment) => {
     let htmlString = nodeMailer.renderTemplate({comment: comment}, '/comments/new_comment.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: 'conneqtioncodeial.com',
+        from: 'netnexus.com',
         // we are sending mail notification for the person who commented
         // for post it would be comment.post.email
         to: comment.user.email,
@@ -35,7 +35,7 @@ exports.newCommentOnPost = (comment) => {
     let htmlString = nodeMailer.renderTemplate({comment: comment}, '/comments/new_comment_on_post.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: 'conneqtioncodeial.com',
+        from: 'NetNexus.com',
         // we are sending mail notification for the person who commented
         // for post it would be comment.post.email
         to: comment.user.email,
