@@ -1,7 +1,7 @@
 # Conneqtion-Codeial - Social Media Website
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
-It is a social media website which offers features like real time chat engine,a wall to share your posts and comments and a mailing notication on post. <br>
+It is a social media website that offers features like real time chat engine,a wall to share your posts and comments and a mailing notication on post. <br>
 Hosted at - <a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
 <h2> Demo </h2>
