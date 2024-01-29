@@ -5,7 +5,7 @@ body {
   animation: gradient 10s ease-in-out infinite;
   font-weight: 700;
   font-family: 'Niconne', cursive;
-  text-shadow: 2px 2px 0px #eb452b;
+  /* text-shadow: 2px 2px 0px #eb452b; */
      }
      @keyframes gradient {
       0% {
@@ -107,6 +107,22 @@ body {
     width: 20%;
     padding: 10px;
     border-right: 1px solid lightgrey; }
+    #home-container #user-nav .user-nav-internal {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    #home-container #user-nav .user-nav-internal p {
+      height: 50px;
+      align-items: center;
+      display: flex;
+      
+    }
+    #home-container #user-nav .user-nav-internal p,
+    #home-container #user-nav .user-nav-internal img {
+      border: 1px solid grey;
+      padding: 0px 10px;
+    }
 
   #home-container #feed-posts {
     color: black;
@@ -118,10 +134,14 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     font-family: 'Niconne', cursive;
+    position: relative;
+    left: 45%;
     }
     #home-container #feed-posts #new-post-form {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column; 
+      align-items: center;
+      justify-content: center}
       #home-container #feed-posts #new-post-form textarea {
         outline: none;
         height: 7rem;
@@ -179,3 +199,60 @@ body {
        }
   #home-container #user-friends a:hover {
     background-color: #F2F3F5; }
+
+    
+  .post-textarea {
+    background:#fff url(https://static.tumblr.com/maopbtg/a5emgtoju/inflicted.png) repeat;        
+     background-size: 100% 4rem;
+    border: 1px solid #CCC;
+    width: 100%;
+    height: 400px;
+    line-height: 2rem;
+    margin: 0 auto;
+    padding: 4px 8px;
+    color: white;
+    border-radius: 1rem;
+  }
+
+  
+  .btn-class-name {
+    --primary: 255,90,120;
+    --secondary: 150,50,60;
+    width: 60px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    outline: 10px solid rgb(var(--primary),.5);
+    border-radius: 100%;
+    transition: .3s;
+    position: relative;
+    margin-top: 30px;
+}
+.btn-class-name .back, .btn-class-name .front {
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-class-name .front {
+background: linear-gradient(0deg,rgba(var(--primary),.6) 20%,rgba(var(--primary)) 50%);
+box-shadow: 0 0.5em 1em -0.2em rgba(var(--secondary),.5);
+border: 1px solid rgb(var(--secondary));
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 1.2rem;
+font-weight: 600;
+font-family: inherit;
+transform: translateY(-15%);
+transition: .15s;
+color: rgb(var(--secondary));
+}

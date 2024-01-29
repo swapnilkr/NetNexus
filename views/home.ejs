@@ -14,14 +14,17 @@
       </div>
 
     <section id="user-nav">
-        <h4>User</h4>
+        <h4 style="    justify-content: center;
+        display: flex;">User</h4>
         <% if(locals.user) { %>
-            <% if(user.avatar) { %>
-                <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
-            <% } %>
-            <p>
-                <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
-            </p>
+            <div class="user-nav-internal">
+                <% if(user.avatar) { %>
+                    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="50" height="50">
+                <% } %>
+                <p style="margin: 0px;">
+                    <a href="/users/profile/<%= user.id %>"><%= user.name %></a>
+                </p>
+            </div>
         <% } %>
     </section>
 
@@ -32,8 +35,16 @@
          <!-- locals is object -->
         <% if (locals.user) { %>
             <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content"  cols="30" rows="5" placeholder="Type Here" required></textarea>
-                <input type="submit" value="Post">
+                <textarea name="content"  cols="30" rows="5" placeholder="Type Here" required class="post-textarea"></textarea>
+                <button type="submit" class="btn-class-name">
+                    <span class="back">
+                    </span>
+                    <span class="front">
+                        <span color="white">
+                            Post
+                        </span>
+                    </span>
+                </button>
             </form>
         <% } %>
     

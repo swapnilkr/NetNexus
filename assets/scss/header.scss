@@ -11,15 +11,20 @@
 
         .mini-logo
         {
+            width: 12%;
             img{
                 height: 30px;
   width: 30px;
+  border-radius: 16px;
             }
             p
             {
                 margin: 5px;
                 font-size: 1.4rem;
                 font-weight: bold;
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
             }
         }
 
