@@ -139,13 +139,14 @@ body {
     }
     #home-container #feed-posts #new-post-form {
       display: flex;
-      flex-direction: column; 
-      align-items: center;
-      justify-content: center}
+      flex-direction: row;
+    align-items: center;
+    justify-content: space-around;}
       #home-container #feed-posts #new-post-form textarea {
+        margin: 0px;
         outline: none;
-        height: 7rem;
-        width: 15rem;
+        height: 10rem;
+        width: 20rem;
         font-size: 1rem;
         border: 0.5px dashed black; }
       #home-container #feed-posts #new-post-form input[type="submit"] {
