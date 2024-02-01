@@ -43,7 +43,7 @@
         return $(`<li id="post-${ post._id }" class="post-code">
         <section class="full-post">
          
-            <p class="post-user-info">${ post.user.name }</p>
+            <p class="post-user-info">${post.user.name}</p>
            
             <p class="post-content">${ post.content }
                 

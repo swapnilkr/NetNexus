@@ -4,32 +4,43 @@
   padding: 0px 10px;
   background: #ff0066;
   color: white;
-  box-shadow: 1px 1px 1px 1px lightgrey; }
-  #layout-header nav .mini-logo {
-    width: 12%;
-  }
-  #layout-header nav .mini-logo img {
-    height: 30px;
-  width: 30px; 
-  border-radius: 16px;}
-  #layout-header nav .mini-logo p {
-    margin: 5px;
-    font-size: 1.4rem;
-    font-weight: bold;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-   }
-  #layout-header nav .auth-links ul {
-    margin: 5% 5px;
-    display: flex; }
-    #layout-header nav .auth-links ul li {
-      margin-right: 30px; 
-      background-color: #fa725a;
-      border-radius: 5px;
-      padding: 0 10px;
-      color: #000;
-      border: 1px solid #fff;}
-  #layout-header nav a {
-    color: white;
-    text-decoration: none; }
+  box-shadow: 1px 1px 1px 1px lightgrey;
+}
+
+#layout-header nav .mini-logo {
+  width: 12%;
+}
+
+#layout-header nav .mini-logo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 16px;
+}
+
+#layout-header nav .mini-logo p {
+  margin: 5px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+}
+
+#layout-header nav .auth-links ul {
+  margin: 5% 5px;
+  display: flex;
+}
+
+#layout-header nav .auth-links ul li {
+  margin-right: 30px;
+  background-color: #fa725a;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #000;
+  border: 1px solid #fff;
+}
+
+#layout-header nav a {
+  color: white;
+  text-decoration: none;
+}

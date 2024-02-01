@@ -7,7 +7,7 @@
     <section class="full-post">
         <p class="post-user-info">
         <a href="/users/profile/<%= post.user.id %>">
-            <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="25" height="25" style="border-radius: 50%;">
+            <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="25" height="25" style="border-radius: 50%; margin-right: 10px;">
         <%= post.user.name %></p></a>
         <p class="post-content"><%= post.content %>
         <!--if user is signed only && the person who created only can del -->
@@ -25,12 +25,16 @@
         <!-- like button -->
 
         <!-- if user is logged in , then show the link to toggle likes , else just show the content-->
-        <br>
+
 
         <small class="post-like-content">
             <% if (locals.user) { %>
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id%>&type=Post">
-                    <i class="fas fa-thumbs-up"></i>
+                    <% if(post.likes.some(like => like.user.toString() === locals.user.id)) { %>
+                        <i class="fas fa-thumbs-down"></i>
+                    <% }else { %>
+                        <i class="fas fa-thumbs-up"></i>
+                    <% } %>
                     <%= post.likes.length %> Likes
                 </a>
             <% } else { %>
@@ -62,7 +66,9 @@
                 <!-- hidden input for which post comment is made -->
 
                 <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
+                <button type="submit" class="button-86">
+                    Add Comment
+                </button>
             </form>
         <% } %>
 

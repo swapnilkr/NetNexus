@@ -1,24 +1,22 @@
-#layout-header
-{
-    nav
-    {
+#layout-header {
+    nav {
         display: flex;
         justify-content: space-between;
         padding: 0px 10px;
         background: #ff0066;
-        color:white;
-        box-shadow:1px 1px 1px 1px lightgrey;
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
 
-        .mini-logo
-        {
+        .mini-logo {
             width: 12%;
-            img{
+
+            img {
                 height: 30px;
-  width: 30px;
-  border-radius: 16px;
+                width: 30px;
+                border-radius: 16px;
             }
-            p
-            {
+
+            p {
                 margin: 5px;
                 font-size: 1.4rem;
                 font-weight: bold;
@@ -28,21 +26,18 @@
             }
         }
 
-        .auth-links
-        {
-            ul
-            {
+        .auth-links {
+            ul {
                 margin: 5% 5px;
                 display: flex;
 
-                li
-                {
+                li {
                     margin-right: 30px;
                 }
             }
         }
-        a
-        {
+
+        a {
             color: white;
             text-decoration: none;
         }

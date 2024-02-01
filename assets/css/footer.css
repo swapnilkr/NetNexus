@@ -3,13 +3,18 @@
   background: grey;
   padding: 5px 10px;
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
   position: fixed;
-  left: 0;
+  right: 0;
   bottom: 0;
-  width: 19.5%;}
-  #layout-footer a {
-    color: white;
-    text-decoration: none; }
-  #layout-footer .footer-nav ul {
-    list-style: none; }
+  width: 19.2%;
+}
+
+#layout-footer a {
+  color: white;
+  text-decoration: none;
+}
+
+#layout-footer .footer-nav ul {
+  list-style: none;
+}
