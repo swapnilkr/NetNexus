@@ -17,7 +17,7 @@ const User=require('../models/user');
 
 //     // Post.find({},function(err,posts){
 //     //     return res.render('home',{
-//     //         title:"Codeial! home",
+//     //         title:"NetNexus! home",
 //     //         posts : posts 
 //     // });
 
@@ -31,7 +31,7 @@ const User=require('../models/user');
 //     // Post.find({}).populate('user').exec(function(err,posts)
 //     // {
 //     //     return res.render('home',{
-//     //         title:"Codeial! home",
+//     //         title:"NetNexus! home",
 //     //         posts : posts 
 //     // })
 
@@ -50,14 +50,14 @@ const User=require('../models/user');
 //         User.find({},function(err,users) {
             
 //             return res.render('home', {
-//                 title: "Codeial | Home",
+//                 title: "NetNexus | Home",
 //                 posts:  posts,
 //                 all_users:users
 //             });
 //         });
         
 //     })
-//      // return res.end(`<h1>Express is up for Codeial</h1>`);
+//      // return res.end(`<h1>Express is up for NetNExus</h1>`);
 
 
 // }

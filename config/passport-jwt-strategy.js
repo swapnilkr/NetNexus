@@ -8,7 +8,7 @@ const User = require('../models/user');
 const env = require('./environment');
 
 // TODO later for some difficult hash code for key , to encrypt or decrypt JWT token
-// right now let it be codeial
+// right now let it be NetNexus
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
