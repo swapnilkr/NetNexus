@@ -131,8 +131,8 @@ body #sign-in-page form input {
   display: inline-block;
   margin-top: 0.5rem;
   width: 15rem;
-  padding: 0.8rem;
-  font-size: 0.7rem;
+  padding: 0.5rem;
+  font-size: 1rem;
   font-family: sans-serif;
   outline-color: black;
 }
