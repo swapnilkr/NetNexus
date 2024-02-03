@@ -4,9 +4,9 @@
 // 1. When the page loads
 // 2. Creation of every post dynamically via AJAX
 
-class PostComments{
+class PostComments {
     // constructor is used to initialize the instance of the class whenever a new instance is created
-    constructor(postId){
+    constructor(postId) {
 
         this.postId = postId;
         this.postContainer = $(`#post-${postId}`);
@@ -16,17 +16,17 @@ class PostComments{
 
         let self = this;
         // call for all the existing comments
-        $(' .delete-comment-button', this.postContainer).each(function(){
+        $(' .delete-comment-button', this.postContainer).each(function () {
             self.deleteComment($(this));
         });
     }
 
 
-    createComment(postId){
+    createComment(postId) {
 
         let pSelf = this;
 
-        this.newCommentForm.submit(function(e){
+        this.newCommentForm.submit(function (e) {
 
             e.preventDefault();
             let self = this;
@@ -36,7 +36,8 @@ class PostComments{
                 type: 'post',
                 url: '/comments/create',
                 data: $(self).serialize(),
-                success: function(data){
+                success: function (data) {
+                    console.log("qswap", data)
                     let newComment = pSelf.newCommentDom(data.data.comment);
                     $(`#post-comments-${postId}`).prepend(newComment);
                     pSelf.deleteComment($(' .delete-comment-button', newComment));
@@ -50,10 +51,10 @@ class PostComments{
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
-                        
+
                     }).show();
 
-                }, error: function(error){
+                }, error: function (error) {
                     console.log(error.responseText);
                 }
             });
@@ -63,28 +64,31 @@ class PostComments{
     }
 
 
-    newCommentDom(comment){
+    newCommentDom(comment) {
         // I've added a class 'delete-comment-button' to the delete comment link and also id to the comment's li
-        return $(`<li id="comment-${ comment._id }">
+        return $(`<li id="comment-${comment._id}">
         <p>
         <small>
             
-        ${ comment.user.name }
+        ${comment.user.name}
         </small>
         <div>
-        ${ comment.content }
+        ${comment.content}
         </div>
         
         <small>
                     
-        <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
+        <a class="toggle-like-button" style={color: white;
+            border: 1px solid pink;
+            padding: 5px;
+            background: black; } data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
             0 Likes
         </a>
     
     </small>
         <div>
             
-        <a class="delete-comment-button" href="/comments/destroy/${ comment._id }">x</a>
+        <a class="delete-comment-button" href="/comments/destroy/${comment._id}">x</a>
                 
         </div>
     </p>
@@ -93,16 +97,16 @@ class PostComments{
     }
 
 
-    deleteComment(deleteLink){
+    deleteComment(deleteLink) {
 
-        $(deleteLink).click(function(e){
-            
+        $(deleteLink).click(function (e) {
+
             e.preventDefault();
 
             $.ajax({
                 type: 'get',
                 url: $(deleteLink).prop('href'),
-                success: function(data){
+                success: function (data) {
                     $(`#comment-${data.data.comment_id}`).remove();
 
                     new Noty({
@@ -111,9 +115,9 @@ class PostComments{
                         type: 'success',
                         layout: 'topRight',
                         timeout: 1500
-                        
+
                     }).show();
-                },error: function(error){
+                }, error: function (error) {
                     console.log(error.responseText);
                 }
             });

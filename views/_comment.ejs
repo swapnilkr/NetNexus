@@ -2,35 +2,39 @@
     <!-- <a href="/users/profile/<%= comment.user.id %>">
         <img src="<%= comment.user.avatar %>" alt="<%= comment.user.name %>" width="80" height="70"> -->
     <p class="comment-user-info">
-        <p class="comment-user-info">
-            <%= comment.user.name %> 
-        </p>
-        <!--if user is signed only && the person who created only can del and the one who created the post -->
-        <p class="comment-content">
-            <span class="content">     
-              <%= comment.content %>
-            </spam>
-        <span class="delete-button">
-            <% if(locals.user && ((locals.user.id == comment.user.id )||( locals.user.id == post.user.id))){%>
-                <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>">x</a>
-  
-           <% } %>
-            </span>
+        <%= comment.user.name %>
     </p>
-        
+    <!--if user is signed only && the person who created only can del and the one who created the post -->
+    <p class="comment-content">
+        <span class="content" style="display: flex;justify-content: space-between;">
+            <%= comment.content %>
+                </spam>
+                <span class="delete-button">
+                    <% if(locals.user && ((locals.user.id==comment.user.id )||( locals.user.id==post.user.id))){%>
+                        <a class="delete-comment-button" href="/comments/destroy/<%= comment._id %>">x</a>
+
+                        <% } %>
+                </span>
+    </p>
 
 
-        <!-- display the likes of comment , if user is logged in then show the link to toggle likes , else just show the content-->
-        <small class="comment-like-content">
-            <% if (locals.user){ %>
-                <a class="toggle-like-button" data-likes="<%= comment.likes.length %>" href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
-                    <i class="fas fa-thumbs-up"></i>   
-                    <%= comment.likes.length %> Likes
-                </a>
+
+    <!-- display the likes of comment , if user is logged in then show the link to toggle likes , else just show the content-->
+    <small class="comment-like-content">
+        <% if (locals.user){ %>
+            <a class="toggle-like-button" style=" color: white;
+            border: 1px solid pink;
+            padding: 5px;
+            background: black;
+        " data-likes="<%= comment.likes.length %>"
+                href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
+                <i class="fas fa-thumbs-up"></i>
+                <%= comment.likes.length %> Likes
+            </a>
             <% }else{ %>
                 <%= comment.likes.length %> Likes
-            <% } %>
-        </small>
-        
-    </p>    
+                    <% } %>
+    </small>
+
+    </p>
 </li>
