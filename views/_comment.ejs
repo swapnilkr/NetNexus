@@ -25,11 +25,14 @@
             <a class="toggle-like-button" style=" color: white;
             border: 1px solid pink;
             padding: 5px;
-            background: black;
-        " data-likes="<%= comment.likes.length %>"
+            background: black;" data-likes="<%= comment.likes.length %>"
                 href="/likes/toggle/?id=<%=comment._id%>&type=Comment">
-                <i class="fas fa-thumbs-up"></i>
-                <%= comment.likes.length %> Likes
+                <% if(comment.likes.some(like=> like.user.toString() === locals.user.id)) { %>
+                    <i class="fas fa-thumbs-down"></i>
+                    <% }else { %>
+                        <i class="fas fa-thumbs-up"></i>
+                        <% } %>
+                            <%= comment.likes.length %> Likes
             </a>
             <% }else{ %>
                 <%= comment.likes.length %> Likes
