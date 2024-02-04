@@ -1,8 +1,8 @@
 # NetNexus - Social Media Website 
-<img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" />
+<p align="center"><img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" /></p>
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
-It is a social media website that offers features like real time chat engine,a wall to share your posts and comments and a mailing notication on post. <br>
+SocialConnect is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notication using mailers. <br>
 Hosted at - <a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
 <h2> Demo </h2>
