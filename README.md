@@ -1,37 +1,66 @@
-# NetNexus - Social Media Website 
+<h1 align="center" id="title">NetNexus - Social Media Website</h1>
 <p align="center"><img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" /></p>
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
 SocialConnect is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notication using mailers. <br>
-Hosted at - <a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
-<h2> Demo </h2>
-<img src="https://user-images.githubusercontent.com/49485584/122675460-28688d80-d1f7-11eb-9e92-2238cc5f824d.png">
-<img src="https://user-images.githubusercontent.com/49485584/122675513-6665b180-d1f7-11eb-94cb-1b3134fe2ba5.png">
-<img src="https://user-images.githubusercontent.com/49485584/122675530-7d0c0880-d1f7-11eb-831b-18ab64b9989b.png">
-<img src="https://user-images.githubusercontent.com/49485584/122675543-87c69d80-d1f7-11eb-8773-02408a374edf.png">
+<h2>🚀 Demo </h2>
 
-<h2> <g-emoji class="g-emoji" alias="rocket" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f680.png">🚀</g-emoji>Tech used: </h2>
-Node.js  <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="20" height="20"/> </a>  <br>
-Express.js <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="20" height="20"/> </a> <br>
-MongoDB  <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="20" height="20"/> </a><br>
-JavaScript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="20" height="20"/> </a><br>
-CSS <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="20" height="20"/> </a><br>
-HTML5 <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="20" height="20"/> </a> <br>
-Nginx <a href="https://www.nginx.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="20" height="20"/> </a> <br>
-Postman <a href="https://postman.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="20" height="20"/> </a><br>
-Redis <a href="https://redis.io" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="20" height="20"/> </a><br>
-SASS <a href="https://sass-lang.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="20" height="20"/> </a><br>
-Gulp <a href="https://gulpjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gulp/gulp-plain.svg" alt="gulp" width="40" height="40"/> </a> <br>
+<a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
-<h2> Usage </h2>
-<ul>
-<li>Clone the project onto your local machine</li>
-<li>$ cd ../conneqtion-codeial </li>
-<li>$ npm install </li>
-<li>$ npm start </li>
-<li>Visit your website at http://localhost:8000 </li>
-</ul>
+
+
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   User Authentication with Google OAuth
+*   Post Creation and Interaction
+*   Real-time Chat with Socket.io
+*   Interactive Wall
+*   Email Notifications
+*   Comment Creation and Interaction
+
+
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+<div align="center">
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/187070862-03888f18-2e63-4332-95fb-3ba4f2708e59.png" alt="websocket" title="websocket"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/192158956-48192682-23d5-4bfc-9dfb-6511ade346bc.png" alt="Sass" title="Sass"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/121401671-49102800-c959-11eb-9f6f-74d49a5e1774.png" alt="npm" title="npm"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183568594-85e280a7-0d7e-4d1a-9028-c8c2209e073c.png" alt="Node.js" title="Node.js"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183859966-a3462d8d-1bc7-4880-b353-e2cbed900ed6.png" alt="Express" title="Express"/></code>
+	<code><img width="50" src="https://github.com/marwin1991/profile-technology-icons/assets/136815194/c49c6dbd-992a-4f14-9cf4-ff40cb5344ed" alt="Gulp" title="Gulp"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/182884894-d3fa6ee0-f2b4-4960-9961-64740f533f2a.png" alt="redis" title="redis"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/182884177-d48a8579-2cd0-447a-b9a6-ffc7cb02560e.png" alt="mongoDB" title="mongoDB"/></code>
+</div>
+
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the project onto your local machine</p>
+
+<p>2. cd ../NetNexus</p>
+
+<p>3. npm install</p>
+
+<p>4. Development</p>
+
+```
+npm start
+```
+
+<p>5. Production</p>
+
+```
+npm run prod_start
+```
+<p>5. Vist -&gt; http://localhost:8000/</p>
+
 
 <h2><g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji> Contributing </h2>
 Contributions, issues and feature requests are welcome.
