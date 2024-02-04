@@ -57,7 +57,7 @@ Technologies used in the project:
 <p>1. Clone the project onto your local machine</p>
 
 ```
-npm start
+https://github.com/swapnilkr/NetNexus.git
 ```
 
 <p>2. Change directory </p>
