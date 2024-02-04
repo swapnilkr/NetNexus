@@ -10,26 +10,26 @@ passport.use(new googleStrategy({
     clientID: env.google_client_id,
     clientSecret: env.google_client_secret,
     callbackURL: env.google_call_back_url,
-    },
+},
 
     // same as jwt access token
     // refresh token when acess token expires we use access token to get new one
 
-    function(accessToken, refreshToken, profile, done){
+    function (accessToken, refreshToken, profile, done) {
 
         // find a user
         // one person can have multiple emails, so arrays is returned
-        User.findOne({ email : profile.emails[0].value}).exec(function(err,user){
-            if (err){
-                console.log('Error in google strategy-passport ',err);
+        User.findOne({ email: profile.emails[0].value }).exec(function (err, user) {
+            if (err) {
+                console.log('Error in google strategy-passport ', err);
                 return;
             }
 
             // console.log(profile);
 
-            if(user){
+            if (user) {
                 // if found set this user as req.user
-                return done(null,user);
+                return done(null, user);
             } else {
 
                 // if not found , create the user and set it as req.user
@@ -40,21 +40,21 @@ passport.use(new googleStrategy({
                 // we create new user
 
                 User.create({
-                    name : profile.displayName,
-                    email : profile.emails[0].value,
+                    name: profile.displayName,
+                    email: profile.emails[0].value,
 
                     // creating raandom password using crypto
-                    password : crypto.randomBytes(20).toString('hex'),
-                }, function(err,user){
+                    password: crypto.randomBytes(20).toString('hex'),
+                }, function (err, user) {
 
-                    if (err){
-                        console.log('Error in creating user ',err);
+                    if (err) {
+                        console.log('Error in creating user ', err);
                         return;
                     }
-                    return done(null,user);
+                    return done(null, user);
 
 
-                }) ;
+                });
             }
         });
     }

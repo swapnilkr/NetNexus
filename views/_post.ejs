@@ -37,7 +37,7 @@
         <!-- if user is logged in , then show the link to toggle likes , else just show the content-->
 
 
-        <small class="post-like-content">
+        <small class="post-like-content" style="margin-bottom: 10px;">
             <% if (locals.user) { %>
                 <a class="toggle-like-button" data-likes="<%= post.likes.length %>"
                     href="/likes/toggle/?id=<%= post._id%>&type=Post">

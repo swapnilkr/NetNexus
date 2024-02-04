@@ -8,9 +8,9 @@
     </head>
     <body> -->
 
-        <!-- calling the header and footer from partials _header.ejs and _footer.ejs -->
+<!-- calling the header and footer from partials _header.ejs and _footer.ejs -->
 
-        <!-- <%- include('_header'); %>
+<!-- <%- include('_header'); %>
 
 
         <h1> NetNExus / Profile Page </h1>
@@ -23,31 +23,76 @@
 <!-- variable part-->
 
 <link rel="stylesheet" href="<%= assetPath('css/user_profile.css') %>">
+
 <body>
-<div class="profile-section">
-<!-- <h1> NetNexus / Profile Page </h1> -->
+    <!-- <h1> NetNexus / Profile Page </h1> -->
 
+    <% if(user.id==profile_user.id) { %>
+        <div class="profile-section">
 
+            <div class="login-box">
 
-<% if(user.id == profile_user.id) { %>
-    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="200" height="200">
-<!-- if user matches then show the form -->
-    <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
-        <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>" required>
-        <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email %>" required>
+                <% if(user.avatar) { %>
+                    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="200" height="200">
+                    <% } else { %>
+                        <img src="<%= assetPath('images/profile-user.png') %>" alt="<%= user.name %>" width="200"
+                            height="200">
+                        <% } %>
+                            <!-- if user matches then show the form -->
+                            <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data"
+                                method="POST">
+                                <div class="user-box">
+                                    <input type="text" name="name" placeholder="Your name"
+                                        value="<%= profile_user.name %>" required>
+                                </div>
+                                <div class="user-box">
 
-        <input type="file" name="avatar" placeholder="Profile Picture">
-        <input type="submit" value="update">
-    </form>
+                                    <input type="email" name="email" placeholder="Your email"
+                                        value="<%= profile_user.email %>" required>
+                                </div>
 
-</div>
-<%} else {%>
-<!-- else show only the profile info-->
-<div class="profile-section">
-    <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="200" height="200">
-    <p id="prof_name">Name - <%= profile_user.name %></p>
-    <p id="prof_email"> Email - <%= profile_user.email %></p>
+                                <input class="button-86" type="file" name="avatar" placeholder="Profile Picture">
+                                <div style="display: flex;">
+                                    <div class='submit-btn'>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <input type="submit" value="Update">
+                                    </div>
+                                </div>
+                            </form>
+            </div>
 
-<% } %>
-</div>
+        </div>
+        <%} else {%>
+            <!-- else show only the profile info-->
+            <div class="profile-section">
+                <div class="login-box" style="top: 50%;">
+
+                    <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="200" height="200">
+                    <div class="prof-container" style="color: white;">
+                        <div style="display: flex;     border: 1px solid cyan; margin: 10px 0px;
+                        padding: 10px;">
+                            <span id="prof_name" style="    padding: 0px 10px;">
+                                Name:
+                            </span>
+                            <span style="background-color: #fa725a; padding: 0px 5px; border-radius: 5px;">
+                                <%= profile_user.name %>
+                            </span>
+                        </div>
+                        <div style="display: flex;     border: 1px solid cyan; margin: 10px 0px;
+                        padding: 10px;">
+                            <span id="prof_email" style="    padding: 0px 10px;">
+                                Email:
+                            </span>
+                            <span style="background-color: #fa725a;padding: 0px 5px; border-radius: 5px;">
+                                <%= profile_user.email %>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <% } %>
+            </div>
 </body>

@@ -1,40 +1,52 @@
-.comment-container{
-    background-color:#F2F3F5;
+.comment-list-container li{
+    border: 1px solid #fa725a;
+    border-radius: 10px;
+}
+
+.comment-container {
+    border: 1px solid #fa725a;
+    border-radius: 10px;
+    background-color: #F2F3F5;
     list-style: none;
     margin-bottom: 0.5rem;
-    border-radius:0.2rem;
-    height:auto;
-    width:100%;
-    .comment-user-info{
-        font-family:arial;
-        font-size:0.8rem;
+    border-radius: 0.2rem;
+    height: auto;
+    width: 100%;
+
+    .comment-user-info {
+        font-family: arial;
+        font-size: 0.8rem;
         color: #a13681;
         font-weight: bold;
         display: flex;
         justify-content: space-between;
     }
-    .comment-content{
-        font-family:arial;
+
+    .comment-content {
+        font-family: arial;
         // display: inline-block;
         display: flex;
         justify-content: space-between;
-        font-size:0.8rem;
-        
-        .content{
+        font-size: 0.8rem;
+
+        .content {
             width: 80%;
 
         }
-        .delete-button{
-            width:20%;
+
+        .delete-button {
+            width: 20%;
         }
     }
-    .comment-like-content{
+
+    .comment-like-content {
         display: flex;
         justify-content: space-between;
-        a{
-            color:#909090;
+
+        a {
+            color: #909090;
             text-decoration: none;
-           
+
         }
     }
 }
