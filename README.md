@@ -2,13 +2,25 @@
 <p align="center"><img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" /></p>
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
-SocialConnect is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notication using mailers. <br>
+NetNexus is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notication using mailers. <br>
 
 <h2>🚀 Demo </h2>
 
 <a href="http://conneqtioncodeial.com">conneqtioncodeial.com</a>
 
+https://github.com/swapnilkr/NetNexus/assets/49485584/be18ad03-050a-448f-b2bf-93b9c0265a1e
 
+https://github.com/swapnilkr/NetNexus/assets/49485584/cd380bca-f7ba-42bc-ac4d-2c6132493f97
+
+https://github.com/swapnilkr/NetNexus/assets/49485584/82725c06-6d30-4491-8660-fdfbb9339379
+
+https://github.com/swapnilkr/NetNexus/assets/49485584/045a4166-c915-42e5-8583-916f413d08da
+
+https://github.com/swapnilkr/NetNexus/assets/49485584/23eb2fdb-d023-4b83-8ba3-9db1c3097919
+
+https://github.com/swapnilkr/NetNexus/assets/49485584/2b7d37e3-71cb-4809-88ef-5fb4e27bdcfc
+
+https://github.com/swapnilkr/NetNexus/assets/49485584/018e446b-063d-449d-ad85-646b8404c5c6
 
 <h2>🧐 Features</h2>
 
@@ -44,9 +56,21 @@ Technologies used in the project:
 
 <p>1. Clone the project onto your local machine</p>
 
-<p>2. cd ../NetNexus</p>
+```
+npm start
+```
 
-<p>3. npm install</p>
+<p>2. Change directory </p>
+
+```
+cd ../NetNexus
+```
+
+<p>3. Install Dependency</p>
+
+```
+npm install
+```
 
 <p>4. Development</p>
 
@@ -59,7 +83,11 @@ npm start
 ```
 npm run prod_start
 ```
-<p>5. Vist -&gt; http://localhost:8000/</p>
+<p>5. Vist -&gt; </p>
+
+```
+http://localhost:8000/
+```
 
 
 <h2><g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji> Contributing </h2>
