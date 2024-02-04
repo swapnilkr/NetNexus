@@ -72,23 +72,43 @@ cd ../NetNexus
 npm install
 ```
 
-<p>4. Development</p>
+<p>4. Install Ubuntu & open </p>
+
+```
+https://ubuntu.com/download/desktop
+```
+
+<p>5. Open Ubuntu-> Install Redis (We are using KUE for delayed jobs for Email notification)  </p>
+
+```
+sudo apt-get update
+```
+```
+sudo apt-get install redis
+```
+
+<p>6. Run in ubuntu. To connect to redis-server  </p>
+
+```
+redis-server
+```
+
+<p>7. Terminal-> Development</p>
 
 ```
 npm start
 ```
 
-<p>5. Production</p>
+<p>8. Production</p>
 
 ```
 npm run prod_start
 ```
-<p>5. Vist -&gt; </p>
+<p>9. Vist -&gt; </p>
 
 ```
 http://localhost:8000/
 ```
-
 
 <h2><g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji> Contributing </h2>
 Contributions, issues and feature requests are welcome.
