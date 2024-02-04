@@ -1,4 +1,5 @@
-# Conneqtion-Codeial - Social Media Website 
+# NetNexus - Social Media Website 
+<img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" />
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
 It is a social media website that offers features like real time chat engine,a wall to share your posts and comments and a mailing notication on post. <br>
