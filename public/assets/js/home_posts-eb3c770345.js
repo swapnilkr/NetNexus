@@ -1,4 +1,6 @@
-{ let t = function () { let t = $("#new-post-form"); t.submit((function (o) { o.preventDefault(), $.ajax({ type: "post", url: "/posts/create", data: t.serialize(), success: function (t) { let o = e(t.data.post); $("#posts-list-container>ul").prepend(o), n($(" .delete-post-button", o)), new PostComments(t.data.post._id), new ToggleLike($(" .toggle-like-button", o)), new Noty({ theme: "relax", text: "Post published!", type: "success", layout: "topRight", timeout: 1500 }).show() }, error: function (t) { console.log(t.responseText) } }) })) }, e = function (t) {  return $(`<li id="post-${post._id}" class="post-container">
+{
+    let t = function () { let t = $("#new-post-form"); t.submit((function (o) { o.preventDefault(), $.ajax({ type: "post", url: "/posts/create", data: t.serialize(), success: function (t) { let o = e(t.data.post); $("#posts-list-container>ul").prepend(o), n($(" .delete-post-button", o)), new PostComments(t.data.post._id), new ToggleLike($(" .toggle-like-button", o)), new Noty({ theme: "relax", text: "Post published!", type: "success", layout: "topRight", timeout: 1500 }).show() }, error: function (t) { console.log(t.responseText) } }) })) }, e = function (t) {
+        return $(`<li id="post-${post._id}" class="post-container">
 <section class="full-post">
     <a href=${/users/profile / post.user.id} %>">
         <img src=${post.user.avatar}" alt="${post.user.name}" width="25" height="25" style="border-radius: 50%; margin-right: 10px;">
@@ -15,7 +17,7 @@
     <small class="like-content">
                     
     <a class="toggle-like-button" data-likes="${post.likes.length}" href="/likes/toggle/?id=${post._id}&type=Post">
-            f(post.likes.some(like => like.user.toString() === locals.user.id)) {
+            if(post.likes.some(like => like.user.toString() === locals.user.id)) {
                 <i class="fas fa-thumbs-down"></i>
             }else {
                 <i class="fas fa-thumbs-up"></i>
@@ -55,4 +57,6 @@
    
         
     </div>
-        </li>`)  }, n = function (t) { $(t).click((function (e) { e.preventDefault(), $.ajax({ type: "get", url: $(t).prop("href"), success: function (t) { $("#post-" + t.data.post_id).remove(), new Noty({ theme: "relax", text: "Post Deleted", type: "success", layout: "topRight", timeout: 1500 }).show() }, error: function (t) { console.log(t.responseText) } }) })) }, o = function () { $("#posts-list-container>ul>li").each((function () { let t = $(this), e = $(" .delete-post-button", t); n(e); let o = t.prop("id").split("-")[1]; new PostComments(o) })) }; t(), o() }
+        </li>`)
+    }, n = function (t) { $(t).click((function (e) { e.preventDefault(), $.ajax({ type: "get", url: $(t).prop("href"), success: function (t) { $("#post-" + t.data.post_id).remove(), new Noty({ theme: "relax", text: "Post Deleted", type: "success", layout: "topRight", timeout: 1500 }).show() }, error: function (t) { console.log(t.responseText) } }) })) }, o = function () { $("#posts-list-container>ul>li").each((function () { let t = $(this), e = $(" .delete-post-button", t); n(e); let o = t.prop("id").split("-")[1]; new PostComments(o) })) }; t(), o()
+}

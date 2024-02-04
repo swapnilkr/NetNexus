@@ -6,21 +6,31 @@
 
     <section class="full-post">
         <p class="post-user-info">
-        <a href="/users/profile/<%= post.user.id %>">
-            <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="25" height="25" style="border-radius: 50%; margin-right: 10px;">
-        <%= post.user.name %></p></a>
-        <p class="post-content"><%= post.content %>
-        <!--if user is signed only && the person who created only can del -->
-      <%  if (locals.user && locals.user.id == post.user.id) {%>
-        <small>
-            <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
-                X
-            </a>
-        </small>
-        <% } %>
-        
+            <a href="/users/profile/<%= post.user.id %>">
+                <% if (post.user.avatar) { %>
+
+                    <img src="<%= post.user.avatar %>" alt="<%= post.user.name %>" width="25" height="25"
+                        style="border-radius: 50%; margin-right: 10px;">
+                    <% }else { %>
+                        <img src="<%= assetPath('images/profile-user.png') %>" alt="<%= post.user.name %>" width="25"
+                            height="25" style="border-radius: 50%; margin-right: 10px;">
+                        <% } %>
+
+                            <%= post.user.name %>
+        </p></a>
+        <p class="post-content">
+            <%= post.content %>
+                <!--if user is signed only && the person who created only can del -->
+                <% if (locals.user && locals.user.id==post.user.id) {%>
+                    <small>
+                        <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">
+                            X
+                        </a>
+                    </small>
+                    <% } %>
+
         </p>
-        
+
 
         <!-- like button -->
 
@@ -29,40 +39,42 @@
 
         <small class="post-like-content">
             <% if (locals.user) { %>
-                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%= post._id%>&type=Post">
-                    <% if(post.likes.some(like => like.user.toString() === locals.user.id)) { %>
+                <a class="toggle-like-button" data-likes="<%= post.likes.length %>"
+                    href="/likes/toggle/?id=<%= post._id%>&type=Post">
+                    <% if(post.likes.some(like=> like.user.toString() === locals.user.id)) { %>
                         <i class="fas fa-thumbs-down"></i>
-                    <% }else { %>
-                        <i class="fas fa-thumbs-up"></i>
-                    <% } %>
-                    <%= post.likes.length %> Likes
+                        <% }else { %>
+                            <i class="fas fa-thumbs-up"></i>
+                            <% } %>
+                                <%= post.likes.length %> Likes
                 </a>
-            <% } else { %>
-                <% post.likes.length %>
-            <% } %>
+                <% } else { %>
+                    <% post.likes.length %>
+                        <% } %>
         </small>
-        </section>
+    </section>
 
 
 
 
-    
+
     <div class="post-comments">
         <div class="post-comments-list">
             <ul id="post-comments-<%= post._id %>">
                 <% for (comment of post.comments){%>
-                 
+
                     <!--include comment partial-->
                     <%- include('_comment') -%>
 
-                <%} %>
+                        <%} %>
             </ul>
-        </div> 
+        </div>
         <% if (locals.user) { %>
-            <form id="post-<%= post._id %>-comments-form" action="/comments/create"  method="POST">
-                
-                <textarea type="text" name="content" placeholder="Type Here to add comment..." required cols="30" rows="3"></textarea>
-                
+            <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
+
+                <textarea type="text" name="content" placeholder="Type Here to add comment..." required cols="30"
+                    rows="3"></textarea>
+
                 <!-- hidden input for which post comment is made -->
 
                 <input type="hidden" name="post" value="<%= post._id %>">
@@ -70,9 +82,9 @@
                     Add Comment
                 </button>
             </form>
-        <% } %>
+            <% } %>
 
-          
+
 
     </div>
 </li>
