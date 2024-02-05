@@ -2,7 +2,7 @@
 <p align="center"><img src="https://socialify.git.ci/swapnilkr/NetNexus/image?language=1&owner=1&name=1&stargazers=1&theme=Light" alt="NetNexus" width="640" height="180" /></p>
 
 <h2> <g-emoji class="g-emoji" alias="sparkles" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png">✨</g-emoji>Description </h2>
-NetNexus is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notication using mailers. <br>
+NetNexus is a full-stack social media platform developed using the MEN (MongoDB, Express.js, Node.js) stack. It provides users with a rich set of features for social interaction including posting, liking, commenting, and real-time chat functionality using WebSockets. Additionally, the platform integrates Google OAuth for secure user authentication and authorization. And a mailing notification using mailers. <br>
 
 <h2>🚀 Demo </h2>
 
