@@ -122,7 +122,7 @@ Contributions, issues and feature requests are welcome.
 
 - 📫 How to reach me **swapnilkr099@gmail.com**
 
-- 📄 Know about my experiences [https://swapnilkr.github.io/Build-Your-Virtual-Resume/](https://swapnilkr.github.io/Build-Your-Virtual-Resume/)
+- 📄 Know about my experiences [https://swapnilkr.github.io/CodeGraffiti/](https://swapnilkr.github.io/CodeGraffiti)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
